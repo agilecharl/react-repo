@@ -8,6 +8,12 @@
     },
     {
       "path": "./apps/react-repo"
+    },
+    {
+      "path": "./apps/api-e2e"
+    },
+    {
+      "path": "./apps/api"
     }
   ]
 }
