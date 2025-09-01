@@ -1,5 +1,11 @@
+import { DefaultNavBar } from '@react-repo/dashboards';
+
 export function App() {
-  return <div></div>;
+  return (
+    <div>
+      <DefaultNavBar />
+    </div>
+  );
 }
 
 export default App;

@@ -5,14 +5,17 @@
   "scripts": {},
   "private": true,
   "dependencies": {
+    "@mui/icons-material": "^7.3.1",
     "@react-router/node": "^7.2.0",
     "@react-router/serve": "^7.2.0",
+    "@types/react-router-dom": "^5.3.3",
     "axios": "^1.6.0",
     "express": "^4.21.2",
     "isbot": "^4.4.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-router": "^7.2.0"
+    "react-router": "^7.2.0",
+    "react-router-dom": "^7.8.2"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",

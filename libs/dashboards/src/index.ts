@@ -1,2 +1,2 @@
-export * from './../navbars/default-navbar';
 export * from './lib/dashboards';
+export * from './lib/navbars/default-navbar';
