@@ -32,30 +32,40 @@ const DefaultNavbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const [darkMode, setDarkMode] = useState(false);
 
-  const toggleDrawer = (open) => () => setDrawerOpen(open);
-  const handleMenuOpen = (event) => setAnchorEl(event.currentTarget);
+  const toggleDrawer =
+    (open: boolean | ((prevState: boolean) => boolean)) => () =>
+      setDrawerOpen(open);
+  const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) =>
+    setAnchorEl(event.currentTarget);
   const handleMenuClose = () => setAnchorEl(null);
   const handleDarkModeToggle = () => setDarkMode(!darkMode);
-
+  /*
   // Simulate theme switch (you can integrate with ThemeProvider for real dark mode)
-  if (darkMode) {
-    document.body.style.backgroundColor = '#121212';
-  } else {
-    document.body.style.backgroundColor = theme.palette.background.default;
+  if (typeof document !== 'undefined') {
+    if (darkMode) {
+      document.body.style.backgroundColor = '#121212';
+    } else {
+      document.body.style.backgroundColor = theme.palette.background.default;
+    }
   }
-
+*/
   const drawerContent = (
-    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+    <Box sx={{ width: 250 }} onClick={toggleDrawer(false)}>
+      <img
+        src="/path-to-drawer-image.jpg"
+        alt="Drawer background"
+        style={{ display: 'none' }}
+      />
       <List>
         {navLinks.map((link) => (
           <ListItem
-            button
             key={link.label}
             component={RouterLink}
             to={link.path}
+            sx={{ cursor: 'pointer' }}
           >
             <ListItemText primary={link.label} />
           </ListItem>

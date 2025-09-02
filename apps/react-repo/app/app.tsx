@@ -1,4 +1,4 @@
-import { DefaultNavBar } from '@react-repo/dashboards';
+import DefaultNavBar from '@react-repo/dashboards';
 
 export function App() {
   return (
