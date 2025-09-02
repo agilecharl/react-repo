@@ -42,16 +42,7 @@ const DefaultNavbar = () => {
     setAnchorEl(event.currentTarget);
   const handleMenuClose = () => setAnchorEl(null);
   const handleDarkModeToggle = () => setDarkMode(!darkMode);
-  /*
-  // Simulate theme switch (you can integrate with ThemeProvider for real dark mode)
-  if (typeof document !== 'undefined') {
-    if (darkMode) {
-      document.body.style.backgroundColor = '#121212';
-    } else {
-      document.body.style.backgroundColor = theme.palette.background.default;
-    }
-  }
-*/
+
   const drawerContent = (
     <Box sx={{ width: 250 }} onClick={toggleDrawer(false)}>
       <img
