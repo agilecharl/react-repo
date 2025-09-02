@@ -3,7 +3,7 @@ import DefaultNavBar from '@react-repo/dashboards';
 export function App() {
   return (
     <div>
-      <DefaultNavBar />
+      <DefaultNavBar drawerLinks={[]} />
     </div>
   );
 }

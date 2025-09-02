@@ -17,6 +17,9 @@
     },
     {
       "path": "./libs/dashboards"
+    },
+    {
+      "path": "./libs/commerce"
     }
   ]
 }

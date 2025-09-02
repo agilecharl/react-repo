@@ -21,14 +21,23 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-const navLinks = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Services', path: '/services' },
-  { label: 'Contact', path: '/contact' },
-];
+interface DefaultNavbarProps {
+  appName?: string;
+  drawerLinks: { label: string; path: string }[];
+}
 
-const DefaultNavbar = () => {
+const defaultProps: DefaultNavbarProps = {
+  appName: 'Default App',
+  drawerLinks: [
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+  ],
+};
+
+const DefaultNavbar = ({
+  appName = defaultProps.appName,
+  drawerLinks = defaultProps.drawerLinks,
+}: DefaultNavbarProps) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -51,7 +60,7 @@ const DefaultNavbar = () => {
         style={{ display: 'none' }}
       />
       <List>
-        {navLinks.map((link) => (
+        {drawerLinks.map((link) => (
           <ListItem
             key={link.label}
             component={RouterLink}
@@ -84,7 +93,7 @@ const DefaultNavbar = () => {
           to="/"
           sx={{ flexGrow: 1, textDecoration: 'none', color: 'inherit' }}
         >
-          MyApp
+          {appName}
         </Typography>
 
         {/* Search Bar (hidden on mobile for simplicity) */}
@@ -105,7 +114,7 @@ const DefaultNavbar = () => {
         {/* Desktop Links */}
         {!isMobile && (
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            {navLinks.map((link) => (
+            {drawerLinks.map((link) => (
               <Button
                 key={link.label}
                 color="inherit"
