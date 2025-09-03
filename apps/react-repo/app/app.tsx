@@ -1,10 +1,14 @@
 import DefaultNavBar from '@react-repo/dashboards';
+import { Route, Routes } from 'react-router-dom';
 
 export function App() {
   return (
-    <div>
+    <>
       <DefaultNavBar drawerLinks={[]} />
-    </div>
+      <Routes>
+        <Route path="/" element={<div>This is the root route.</div>} />
+      </Routes>
+    </>
   );
 }
 
