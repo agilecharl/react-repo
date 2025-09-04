@@ -1,7 +1,264 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+/* Services List Component CSS */
+
+/* Main container */
+.services-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f8fafc, #eff6ff);
+  padding: 3rem 1rem;
+}
+
+.services-wrapper {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+/* Header section */
+.services-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.services-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+/* Grid layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Service card */
+.service-card {
+  position: relative;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.25rem);
+}
+
+.service-card.popular {
+  ring: 2px solid #3b82f6;
+}
+
+/* Popular badge */
+.popular-badge {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3b82f6;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Card content */
+.service-content {
+  padding: 2rem;
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.service-icon {
+  color: #3b82f6;
+  margin-right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.service-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+}
+
+.service-description {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+/* Pricing section */
+.service-pricing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.service-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.service-duration {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Features list */
+.service-features {
+  margin-bottom: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.feature-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #10b981;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  color: #374151;
+}
+
+/* Action button */
+.service-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.service-button.popular {
+  background: #3b82f6;
+  color: white;
+}
+
+.service-button.popular:hover {
+  background: #2563eb;
+}
+
+.service-button.default {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.service-button.default:hover {
+  background: #e5e7eb;
+}
+
+/* Footer section */
+.services-footer {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer-text {
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.contact-button {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  transform: scale(1);
+}
+
+.contact-button:hover {
+  background: linear-gradient(to right, #2563eb, #7c3aed);
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .services-container {
+    padding: 2rem 0.5rem;
+  }
+
+  .services-title {
+    font-size: 2rem;
+  }
+
+  .service-content {
+    padding: 1.5rem;
+  }
+
+  .services-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Animation classes for dynamic loading */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
